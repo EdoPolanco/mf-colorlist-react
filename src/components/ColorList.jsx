@@ -17,7 +17,10 @@ const ColorList = ({colorList = [], handleDragStart, handleSubmitButtonColor }) 
   }
   
   return (
-    <div className='list-group text-center'>
+    <div className='list-group text-center'
+         data-bs-toggle="tooltip" data-bs-placement="right"
+         data-bs-title='Cuando tengas elementos los podras arrastrar a la seccion de "Preset" '
+    >
       { colorList.length > 0 ? (
         colorList.map( (color, index) => 
           <div 
@@ -45,8 +48,6 @@ const ColorList = ({colorList = [], handleDragStart, handleSubmitButtonColor }) 
           draggable="true"
           onDragStart={() => handleDragStart(color)}
           onClick={() => handleCopyColor(color)}
-          data-bs-toggle="tooltip" data-bs-placement="right"
-          data-bs-title='Puedes arrastrarme a la seccion de "Preset" '
         >
           <div style={{ display: "flex", alignItems: "center" }}>
             <span style={{
