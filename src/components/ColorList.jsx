@@ -18,7 +18,7 @@ const ColorList = ({colorList = [], handleDragStart, handleSubmitButtonColor }) 
   
   return (
     <div className='list-group text-center'
-         data-bs-toggle="tooltip" data-bs-placement="right"
+         data-bs-toggle="tooltip" data-bs-placement="top"
          data-bs-title='Cuando tengas elementos los podras arrastrar a la seccion de "Preset" '
     >
       { colorList.length > 0 ? (
