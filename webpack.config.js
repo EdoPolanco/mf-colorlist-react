@@ -9,7 +9,9 @@ const printCompilationMessage = require('./compilation.config.js');
 
 module.exports = (_, argv) => ({
   output: {
-    publicPath: "https://iridescent-tulumba-b424f6.netlify.app/",
+    publicPath: argv.mode === "development" 
+                  ? "http://localhost:3002/" 
+                  : "https://iridescent-tulumba-b424f6.netlify.app/",
   },
 
   resolve: {
