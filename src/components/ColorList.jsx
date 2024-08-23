@@ -1,7 +1,7 @@
 import React from 'react'
 import Swal from "sweetalert2"
 
-const ColorList = ({colorList = [], handleDragStart, handleSubmitButtonColor }) => {
+const ColorList = ({colorList = [], handleDragStart, handleDeleteColor }) => {
 
   const handleCopyColor = (color) => {
     navigator.clipboard.writeText(color);
@@ -9,7 +9,7 @@ const ColorList = ({colorList = [], handleDragStart, handleSubmitButtonColor }) 
     Swal.fire({
       position: "top-center",
       icon: "success",
-      title: `Color: ${color} Copied!`,
+      title: `Color: ${color} Copiado!`,
       showConfirmButton: false,
       timer: 1500,
       timerProgressBar: true,
@@ -65,7 +65,7 @@ const ColorList = ({colorList = [], handleDragStart, handleSubmitButtonColor }) 
         <button 
           type="button" 
           className="btn btn-link p-0"
-          onClick={(event) => handleSubmitButtonColor(event, 'delete')}
+          onClick={() => handleDeleteColor(color)}
           title="Eliminar"
         >
           <i className="bi bi-trash" style={{ color: 'red' }}></i>
