@@ -74,7 +74,7 @@ const ColorList = ({colorList = [], handleDragStart, handleDeleteColor }) => {
       
 
           )) : (
-          <div className="alert alert-danger" role='alert'>
+          <div className="alert alert-danger mt-3" role='alert'>
             <b>Sin elementos</b>
 
           </div>
