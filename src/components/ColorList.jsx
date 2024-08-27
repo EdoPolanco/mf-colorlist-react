@@ -23,15 +23,16 @@ const ColorList = ({colorList = [], handleDragStart, handleDeleteColor }) => {
     >
       { colorList.length > 0 ? (
         colorList.map( (color, index) => 
-          <div 
-        className='list-group-item list-group-item-action'
-        style={{ 
-          display: 'flex', 
-          justifyContent: 'space-between', 
-          alignItems: 'center', 
-          cursor: 'pointer' 
-        }}
-      >
+          <div
+            key={`dv-${index}`}
+            className='list-group-item list-group-item-action'
+            style={{ 
+              display: 'flex', 
+              justifyContent: 'space-between', 
+              alignItems: 'center', 
+              cursor: 'pointer' 
+            }}
+          >
         <button 
           key={index} 
           type='button' 
@@ -63,6 +64,7 @@ const ColorList = ({colorList = [], handleDragStart, handleDeleteColor }) => {
         </button>
         
         <button 
+          key={`dlt-${index}`}
           type="button" 
           className="btn btn-link p-0"
           onClick={() => handleDeleteColor(color)}
